@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- Codes by CodingFire - youtube.com/codingfire -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css">
+    <title>Number to words converter | Coding Fire</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="converter">
+        <header>Number To Words Converter</header>
+        <input class="inputBox" type="text" placeholder="Type a number...">
+        <button class="covert">Covert</button>
+      </div>
+      <div class="output">
+        <span>Converted Output : <span class="result"></span></span>
+      </div>
+      <span class="emptyBox">Please Provide a Number To Convert</span>
+    </div>
+
+    <script>
+      // Get all elements
+      let inputBox = document.querySelector('.inputBox');
+      let emptyBox = document.querySelector('.emptyBox')
+      let result = document.querySelector('.result');
+      let btn = document.querySelector('.covert');
+
+      btn.addEventListener('click', () => {
+        if (inputBox.value === '') {
+          emptyBox.classList.add('isEmpty');
+        } else {
+          emptyBox.classList.remove('isEmpty');
+        }
+        result.innerText = numberToWords.toWords(inputBox.value);
+      });
+    </script>
+
+    <script src="numberToWords.min.js"></script>
+  </body>
+</html>
